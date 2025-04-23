@@ -1,5 +1,5 @@
 //First we mine. Then we craft. Let's Minecraft!
-package Homework01.Task03;
+package Homework02.Task03;
 import java.time.LocalDateTime;
 
 public class Mail {
