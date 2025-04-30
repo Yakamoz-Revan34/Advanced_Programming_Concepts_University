@@ -6,7 +6,7 @@ public class Main {
         Message m2 = new SMS();
         System.out. println(m1.getType ());
         System.out. println(m2.getType ());
-        System.out.println(m1.send()); // Uncomment this line and explain what happens
+        //System.out.println(m1.send()); // Uncomment this line and explain what happens
         /*
         What happens is that we declared the static type of m1 to be Message, and we are now trying to use a method which is not in Message but Email. Since the compiler excepts
         only static content we get the error "cannot find symbol method send()" as the compiler can't find the method in the static runtime.
