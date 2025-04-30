@@ -20,7 +20,6 @@ public class Inbox {
 
     public Mail giveMails(int index) {
         index = index-1; //assuming the end-user thinks of the list starting at 1
-        Mail dummy;
         if((index > 0) && (index <= allMails.size())) {
             return allMails.get(index);
         } else {
