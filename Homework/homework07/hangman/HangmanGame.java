@@ -9,6 +9,7 @@ public class HangmanGame extends GameGUI
     @Override
     protected void startGame() {
         super.startGame();
+        inputField.addActionListener(e -> processInput());
         timerThread = new Thread(() -> {
             try {
                 while (!timeEnds()) {
