@@ -29,16 +29,23 @@ public class PersistentShapeManager {
                     shape = ShapeFactory.fromString(currentLine);
                     listOfShapes.add(shape);
                 } catch (IllegalArgumentException e) {
-                    System.err.println("Invalid line: "+currentLine+" is being skipped.");
+                    System.err.println("Invalid line: " + currentLine + " is being skipped.");
                 }
             }
         } catch (FileNotFoundException e) {
-            System.err.println("The file: "+filename+" could not be found.");
+            System.err.println("The file: " + filename + " could not be found.");
         } catch (IOException e) {
-            System.err.println("An exception occured while reading the file "+filename+".");
+            System.err.println("An exception occured while reading the file " + filename + ".");
         }
         return listOfShapes;
     }
 
-
+    static void clearFile(String filename) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) { //opens in overwrite mode and with no new input effectively empties the file.
+        } catch (IOException e) {
+            System.err.println("Expection while emptying the file: "+filename+".");
+            e.printStackTrace();
+        }
+    }
 }
+
