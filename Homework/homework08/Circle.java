@@ -17,7 +17,7 @@ public class Circle extends Shape {
 
     @Override
     public String toString() {
-        String dummy = "Circle: radius="+radius+", area="+getArea()+".";
+        String dummy = "Circle: radius="+radius;
         return dummy;
     }
 

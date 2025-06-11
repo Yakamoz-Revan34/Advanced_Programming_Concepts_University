@@ -19,7 +19,7 @@ public class Rectangle extends Shape{
 
     @Override
     public String toString() {
-        String dummy = "Rectangle: widht="+width+", length="+length+", area="+getArea()+".";
+        String dummy = "Rectangle: width="+width+", length="+length;
         return dummy;
     }
 
