@@ -20,14 +20,25 @@ public class PersistentShapeManager {
     }
 
     public static List<Shape> loadShapesFromFile(String filename) {
-        List<Shape> shapes = new ArrayList<>();
+        List<Shape> listOfShapes = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
-
+            String currentLine;
+            while ((currentLine = reader.readLine()) != null) {
+                try {
+                    Shape shape;
+                    shape = ShapeFactory.fromString(currentLine);
+                    listOfShapes.add(shape);
+                } catch (IllegalArgumentException e) {
+                    System.err.println("Invalid line: "+currentLine+" is being skipped.");
+                }
+            }
         } catch (FileNotFoundException e) {
             System.err.println("The file: "+filename+" could not be found.");
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.err.println("An exception occured while reading the file "+filename+".");
         }
-        return shapes;
+        return listOfShapes;
     }
+
+
 }
